@@ -16,7 +16,7 @@ timezone: Asia/Jakarta
 
 title: 0x5chltz # the main title
 
-tagline: Sleeping Engineer # it will display as the subtitle
+tagline: Offensive Security # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
