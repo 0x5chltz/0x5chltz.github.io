@@ -10,6 +10,16 @@ _site
 
 # RubyGems
 *.gem
+token
+_data/authors.yml
+_posts/2025-05-25-htb-escapetwo.md
+_posts/2025-05-25-htb-fluffy.md
+_posts/2025-06-03-htb-backfire.md
+_posts/2026-01-02-htb-gavel.md
+_posts/2026-01-02-htb-imagery.md
+assets/htb/backfire/
+assets/htb/escapetwo/
+assets/htb/fluffy/
 
 # NPM dependencies
 node_modules

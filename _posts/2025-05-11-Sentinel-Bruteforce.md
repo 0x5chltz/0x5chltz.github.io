@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Task 1 Bruteforce
+title: Task 1 Brute Force
 date: 11-05-2025
 categories: SentinelSecure
 tags: bruteforce     # TAG names should always be lowercase
