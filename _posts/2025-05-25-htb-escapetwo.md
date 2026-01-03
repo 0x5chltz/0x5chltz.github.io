@@ -123,7 +123,7 @@ xl/sharedStrings.xml: sa:MSSQLP@ssw0rd!
 ```
 {: .nolineno}
 
-With the discovered password `MSSQLP@ssw0rd!`, the attacker accessed Microsoft SQL Server using the `sa` (database system administrator) account. Once access is successful,  and I then enables xp_cmdshell to execute system commands through SQL Server. Once enabled, I read the SQL Server configuration file (sql-Configuration.INI) and discovers the SQL service credentials:
+With the discovered password `MSSQLP@ssw0rd!`, I accessed Microsoft SQL Server using the `sa` (database system administrator) account. Once access is successful,  and I then enables xp_cmdshell to execute system commands through SQL Server. Once enabled, I read the SQL Server configuration file (sql-Configuration.INI) and discovers the SQL service credentials:
 
 ```shell
 ➜ escapetwo  mssqlclient.py -dc-ip 10.10.11.51 -target-ip 10.10.11.51 -port 1433 sequel.htb/sa:'MSSQLP@ssw0rd!'@10.10.11.51
